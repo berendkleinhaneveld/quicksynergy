@@ -86,8 +86,8 @@
 				7AE6A78B0E72EC2100302374 /* SynergyHelper.h */,
 				7AE6A78C0E72EC2100302374 /* SynergyHelper.m */,
 			);
-			name = Classes;
-			sourceTree = "<group>";
+			path = Classes;
+			sourceTree = SOURCE_ROOT;
 		};
 		1058C7A0FEA54F0111CA2CBB /* Linked Frameworks */ = {
 			isa = PBXGroup;
@@ -121,8 +121,7 @@
 			isa = PBXGroup;
 			children = (
 				080E96DDFE201D6D7F000001 /* Classes */,
-				29B97315FDCFA39411CA2CEA /* Other Sources */,
-				7AE6A7D40E72F28100302374 /* Synergy Binaries */,
+				7A05260613D26C4D00139A9E /* Images */,
 				29B97317FDCFA39411CA2CEA /* Resources */,
 				29B97323FDCFA39411CA2CEA /* Frameworks */,
 				19C28FACFE9D520D11CA2CBB /* Products */,
@@ -130,28 +129,20 @@
 			name = QuickSynergy;
 			sourceTree = "<group>";
 		};
-		29B97315FDCFA39411CA2CEA /* Other Sources */ = {
+		29B97317FDCFA39411CA2CEA /* Resources */ = {
 			isa = PBXGroup;
 			children = (
 				32CA4F630368D1EE00C91783 /* QuickSynergy_Prefix.pch */,
 				29B97316FDCFA39411CA2CEA /* main.m */,
-			);
-			name = "Other Sources";
-			sourceTree = "<group>";
-		};
-		29B97317FDCFA39411CA2CEA /* Resources */ = {
-			isa = PBXGroup;
-			children = (
-				7AFD328B0FDC81CF00EADF36 /* iMac.icns */,
-				7AE6A7D90E72F31A00302374 /* QuickSynergy1.icns */,
-				7AE6A7DA0E72F31A00302374 /* QuickSynergy2.icns */,
+				7AE6A7D50E72F2AF00302374 /* synergyc */,
+				7AE6A7D60E72F2B000302374 /* synergys */,
 				8D1107310486CEB800E47090 /* Info.plist */,
 				7A8DA510100AB37800E5B105 /* SparklePubCertificate.pem */,
 				089C165CFE840E0CC02AAC07 /* InfoPlist.strings */,
 				1DDD58140DA1D0A300B32029 /* MainMenu.xib */,
 			);
-			name = Resources;
-			sourceTree = "<group>";
+			path = Resources;
+			sourceTree = SOURCE_ROOT;
 		};
 		29B97323FDCFA39411CA2CEA /* Frameworks */ = {
 			isa = PBXGroup;
@@ -162,14 +153,15 @@
 			name = Frameworks;
 			sourceTree = "<group>";
 		};
-		7AE6A7D40E72F28100302374 /* Synergy Binaries */ = {
+		7A05260613D26C4D00139A9E /* Images */ = {
 			isa = PBXGroup;
 			children = (
-				7AE6A7D50E72F2AF00302374 /* synergyc */,
-				7AE6A7D60E72F2B000302374 /* synergys */,
+				7AFD328B0FDC81CF00EADF36 /* iMac.icns */,
+				7AE6A7D90E72F31A00302374 /* QuickSynergy1.icns */,
+				7AE6A7DA0E72F31A00302374 /* QuickSynergy2.icns */,
 			);
-			name = "Synergy Binaries";
-			sourceTree = "<group>";
+			path = Images;
+			sourceTree = SOURCE_ROOT;
 		};
 /* End PBXGroup section */
 
@@ -281,8 +273,8 @@
 				GCC_MODEL_TUNING = G5;
 				GCC_OPTIMIZATION_LEVEL = 0;
 				GCC_PRECOMPILE_PREFIX_HEADER = YES;
-				GCC_PREFIX_HEADER = QuickSynergy_Prefix.pch;
-				INFOPLIST_FILE = Info.plist;
+				GCC_PREFIX_HEADER = Resources/QuickSynergy_Prefix.pch;
+				INFOPLIST_FILE = Resources/Info.plist;
 				INSTALL_PATH = "$(HOME)/Applications";
 				PRODUCT_NAME = QuickSynergy;
 				SDKROOT = macosx;
@@ -302,8 +294,8 @@
 				);
 				GCC_MODEL_TUNING = G5;
 				GCC_PRECOMPILE_PREFIX_HEADER = YES;
-				GCC_PREFIX_HEADER = QuickSynergy_Prefix.pch;
-				INFOPLIST_FILE = Info.plist;
+				GCC_PREFIX_HEADER = Resources/QuickSynergy_Prefix.pch;
+				INFOPLIST_FILE = Resources/Info.plist;
 				INSTALL_PATH = "$(HOME)/Applications";
 				PRODUCT_NAME = QuickSynergy;
 				SDKROOT = macosx;
