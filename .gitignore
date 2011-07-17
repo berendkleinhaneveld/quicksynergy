@@ -5,8 +5,9 @@ build/*
 *.perspectivev3
 *.mode1v3
 *.mode2v3
+xcuserdata
 
-# old skool
+# old stuff
 .svn
 
 # osx noise
