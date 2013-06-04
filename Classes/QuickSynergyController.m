@@ -22,9 +22,9 @@
 
 @implementation QuickSynergyController
 
-- (id) init
+- (id)initWithWindow:(NSWindow *)window 
 {
-    if ((self = [super init])) {
+    if ((self = [super initWithWindow:window])) {
         [GrowlApplicationBridge setGrowlDelegate: self];
         synergy = [[SynergyHelper alloc] init];
     }
@@ -230,7 +230,14 @@
 
 - (BOOL)applicationShouldTerminateAfterLastWindowClosed:(NSApplication *)theApplication
 {
-    return YES;
+    return NO;
+}
+
+- (BOOL)applicationShouldHandleReopen:(NSApplication*)theApplication hasVisibleWindows:(BOOL)flag {
+	if (!flag) {
+		[self showWindow:nil];
+	}
+	return !flag;
 }
 
 - (void) receiveSleepNote: (NSNotification*) note

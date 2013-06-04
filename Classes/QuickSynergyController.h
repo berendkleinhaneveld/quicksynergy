@@ -29,7 +29,7 @@
 #define TAB_SHARE @"Share"
 #define TAB_USE   @"Use"
 
-@interface QuickSynergyController : NSObject <GrowlApplicationBridgeDelegate>
+@interface QuickSynergyController : NSWindowController <GrowlApplicationBridgeDelegate>
 {
     SynergyHelper *synergy;
 	BOOL isItRunning;
