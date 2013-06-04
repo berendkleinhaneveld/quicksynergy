@@ -223,8 +223,40 @@
     }
 }
 
+- (void)saveState {
+	NSString* file = [NSString stringWithFormat:@"%@/%@", [[NSBundle mainBundle] resourcePath], STATE_FILE_NAME];
+	NSMutableDictionary* applicationState = [[NSMutableDictionary alloc] initWithCapacity:1];
+	// Set a value for the current tab index
+	[applicationState setValue:[NSNumber numberWithInt:[tabview indexOfTabViewItem:tabview.selectedTabViewItem]]
+						forKey:STATE_KEY_TAB_INDEX];
+	// Set a value for whether synergy was still running or not
+	[applicationState setValue:[NSNumber numberWithBool:[synergy isSynergyRunning]]
+						forKey:STATE_KEY_RUNNING];
+	[applicationState writeToFile:file atomically:YES];
+	[applicationState release];
+}
+
+- (void)loadState {
+	NSString* file = [NSString stringWithFormat:@"%@/%@", [[NSBundle mainBundle] resourcePath], STATE_FILE_NAME];
+	if ([[NSFileManager defaultManager] fileExistsAtPath:file]) {
+		NSDictionary* applicationState = [[NSDictionary alloc] initWithContentsOfFile:file];
+		NSInteger index = [(NSNumber*)[applicationState valueForKey:STATE_KEY_TAB_INDEX] integerValue];
+		[tabview selectTabViewItemAtIndex:index];
+		BOOL wasRunning = [(NSNumber*)[applicationState valueForKey:STATE_KEY_RUNNING] boolValue];
+		if (wasRunning)
+			[self startStop:nil];
+		[applicationState release];
+	}
+}
+
+- (void)applicationDidFinishLaunching:(NSNotification *)aNotification {
+	[self loadState];
+}
+
 - (void)applicationWillTerminate:(NSNotification *)aNotification
 {
+	[self saveState];
+	
     [synergy startStop:(int)nil andConnectToServer:nil];
 }
 

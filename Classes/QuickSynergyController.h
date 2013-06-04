@@ -29,6 +29,10 @@
 #define TAB_SHARE @"Share"
 #define TAB_USE   @"Use"
 
+#define STATE_FILE_NAME		@"preferences.plist"
+#define STATE_KEY_TAB_INDEX	@"QSLastTabIndex"
+#define STATE_KEY_RUNNING	@"QSWasRunning"
+
 @interface QuickSynergyController : NSWindowController <GrowlApplicationBridgeDelegate>
 {
     SynergyHelper *synergy;
@@ -49,4 +53,5 @@
 - (IBAction)gotoPage:(id)sender;
 
 - (void) fileNotifications;
+- (void) loadState;
 @end
